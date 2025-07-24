@@ -1,17 +1,49 @@
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class ProcessoSeletivo {
     public static void main(String[] args) {
-        selecaoCandidato();
-        
+        String [] candidatos = {"LUIZ", "MARIA", "JOAO", "JOSE", "PEDRO"};
+        for(String candidato: candidatos) {
+
+        }
+    }
+
+    static void entrandoEmcontado(String candidato) {
+        int tentativasRealizadas = 1;
+        boolean continuarTentando = true;
+        boolean atendeu = false;
+        do {
+            atendeu = atender();
+            continuarTentando = !atendeu;
+            if(continuarTentando)
+                tentativasRealizadas++;
+                else
+                System.out.println("CONTATO REALIZADO COM SUCESSO");
+        }while(continuarTentando && tentativasRealizadas<3);
+
+        if(atendeu);
+        System.out.println("CONSEGUIMOS ");
+
+    }
+    //Metodo auxiliar 
+    static boolean atender() {
+        return new Random().nextInt(3) == 1;
     }
 
     static void imprimirSelecionados (){
          String [] candidatos = {"LUIZ", "MARIA", "JOAO", "JOSE", "PEDRO"};
-         System.out.println("Imprimido a lita de candidatos infromando o indice do elemento");
+         System.out.println("Imprimido a lista  de candidatos infromando o indice do elemento");
 
          for(int indice=0; indice < candidatos.length;indice++){
-        //Para cada posição no array de candidatos, imprima o nome e a posição
+            System.out.println("O candidato de n" + indice + "é" + candidatos[indice]);
+        
+         }
+
+         System.out.println("Forma abrevida de interação for each ");
+
+         for(String candidato: candidatos) {
+            System.out.println("O candidato selecionado foi" + candidato);
          }
     }
 
@@ -25,9 +57,9 @@ public class ProcessoSeletivo {
             String candidato = candidatos[candidatosAtual];
             double salarioPretendido = valorPretendido();
 
-            System.out.println("O candidato" +  candidato  + "Solicitou este valor de salário" + salarioPretendido);
+            System.out.println("O candidato " + candidato + " solicitou este valor de salário: " + salarioPretendido);
             if (salarioBase >= salarioPretendido){
-                System.out.println("O candidato" + candidato + "foi selecionado para a vaga ");
+                System.out.println("O candidato"  + candidato  +  "foi selecionado para a vaga ");
                 candidatoSelecionados++;
             }
 
@@ -44,7 +76,7 @@ public class ProcessoSeletivo {
     
 
 
-    static void analisarCanditado(double salarioPretendido) {
+    static void analisarCandidato(double salarioPretendido) {
         double salarioBase = 2000.0;
         if (salarioBase > salarioPretendido) {
             System.out.println("Ligar para o candidato");
