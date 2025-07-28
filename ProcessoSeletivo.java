@@ -5,11 +5,11 @@ public class ProcessoSeletivo {
     public static void main(String[] args) {
         String [] candidatos = {"LUIZ", "MARIA", "JOAO", "JOSE", "PEDRO"};
         for(String candidato: candidatos) {
-
+            System.out.println("Candidato: " + candidato);
         }
     }
 
-    static void entrandoEmcontado(String candidato) {
+    static void entrandoEmContato(String candidato) {
         int tentativasRealizadas = 1;
         boolean continuarTentando = true;
         boolean atendeu = false;
@@ -22,7 +22,7 @@ public class ProcessoSeletivo {
                 System.out.println("CONTATO REALIZADO COM SUCESSO");
         }while(continuarTentando && tentativasRealizadas<3);
 
-        if(atendeu);
+        if(atendeu)
         System.out.println("CONSEGUIMOS ");
 
     }
@@ -33,7 +33,8 @@ public class ProcessoSeletivo {
 
     static void imprimirSelecionados (){
          String [] candidatos = {"LUIZ", "MARIA", "JOAO", "JOSE", "PEDRO"};
-         System.out.println("Imprimido a lista  de candidatos infromando o indice do elemento");
+        System.out.println("Imprimindo a lista de candidatos informando o índice do elemento:");
+
 
          for(int indice=0; indice < candidatos.length;indice++){
             System.out.println("O candidato de n" + indice + "é" + candidatos[indice]);
@@ -59,7 +60,7 @@ public class ProcessoSeletivo {
 
             System.out.println("O candidato " + candidato + " solicitou este valor de salário: " + salarioPretendido);
             if (salarioBase >= salarioPretendido){
-                System.out.println("O candidato"  + candidato  +  "foi selecionado para a vaga ");
+                System.out.println("O candidato "  + candidato  +  " foi selecionado para a vaga.");
                 candidatoSelecionados++;
             }
 
